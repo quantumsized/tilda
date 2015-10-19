@@ -230,7 +230,8 @@ nomatch:
 static GSList *getPids() {
     GSList *pids = NULL;
     FILE *ps_output;
-    const gchar ps_command[] = "ps -C tilda -o pid=";
+//     const gchar ps_command[] = "ps -C tilda -o pid=";
+    const gchar ps_command[] = "pgrep -a tilda";
     gchar buf[16]; /* Really shouldn't need more than 6 */
 
     if ((ps_output = popen (ps_command, "r")) == NULL) {
